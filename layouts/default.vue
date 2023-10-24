@@ -4,7 +4,7 @@
 
  <AppAside/>
 
-    <div class="mt-14 p-4 sm:ml-64">
+    <div class="pt-32 min-h-screen p-4 sm:ml-64 bg-white dark:bg-zinc-800">
       <slot />
     </div>
   </div>

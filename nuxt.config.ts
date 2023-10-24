@@ -11,6 +11,13 @@ export default defineNuxtConfig({
     '@vite-pwa/nuxt',
     '@nuxtjs/i18n',
   ],
+  vite: {
+    vue: {
+      script: {
+        defineModel: true,
+      },
+    },
+  },
   i18n: {
     // Adding English-Canada and Arabic-Egypt
     // as our supported locales. You can add as

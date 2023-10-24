@@ -3,6 +3,10 @@ export default defineI18nConfig(() => ({
   locale: 'fa',
   messages: {
     en: {
+      // theme
+      theme: 'Select Theme',
+      dark: 'Dark',
+      light: 'Light',
 
       // Side bar
       dashboard: 'Dashboard',
@@ -12,9 +16,18 @@ export default defineI18nConfig(() => ({
 
       // inputs
       name: 'Name',
+      name_placeholder: 'Taymaz Akbari',
+
+      save: 'Save',
+
     },
     fa: {
+      // theme
+      theme: 'انتخاب تم',
 
+      dark: 'تاریک',
+      light: 'روشن',
+      
       // Side bar
       dashboard: 'داشبورد',
       todos: 'کار ها',
@@ -23,6 +36,10 @@ export default defineI18nConfig(() => ({
 
       // inputs
       name: 'نام',
+      name_placeholder: 'تایماز اکبری',
+
+      save: 'ذخیره',
+
     },
   },
 }))
