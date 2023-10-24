@@ -23,7 +23,8 @@ export default defineNuxtConfig({
     // as our supported locales. You can add as
     // many locales as you want here.
     locales: ["en", "fa"],
-    strategy: "prefix",
+  
+    strategy: "prefix_except_default",
     // Used when active locale is not explicitly defined
     defaultLocale: "fa",
 
