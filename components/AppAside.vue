@@ -7,7 +7,7 @@ const localePath = useLocalePath()
     <div class="h-full overflow-y-auto bg-white px-3 pb-4 dark:bg-zinc-900">
       <ul class="font-medium space-y-2">
         <li>
-          <NuxtLink :to="localePath('/')" class="group flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+          <NuxtLink :to="localePath('/dashboard')" class="group flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
             <i class="i-carbon-apps h-5 w-5 flex-shrink-0 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
             <span class="mr-3">{{ $t('dashboard') }}</span>
           </NuxtLink>

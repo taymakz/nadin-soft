@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@vite-pwa/nuxt',
     '@nuxtjs/i18n',
+    '@vee-validate/nuxt',
   ],
   vite: {
     vue: {

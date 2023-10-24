@@ -3,9 +3,9 @@ export default defineI18nConfig(() => ({
   locale: 'fa',
   messages: {
     en: {
-         // locale
-         english : 'English',
-         persian : 'Persian',
+      // locale
+      english: 'English',
+      persian: 'Persian',
 
       // theme
       dark: 'Dark',
@@ -21,6 +21,7 @@ export default defineI18nConfig(() => ({
       name: 'Name',
       name_placeholder: 'Taymaz Akbari',
       theme: 'Select Theme',
+      required_input:'this field is required',
 
       locale: 'Select Locale',
 
@@ -30,12 +31,12 @@ export default defineI18nConfig(() => ({
     fa: {
 
       // locale
-      english : 'انگلیسی',
-      persian : 'فارسی',
+      english: 'انگلیسی',
+      persian: 'فارسی',
 
       dark: 'تاریک',
       light: 'روشن',
-      
+
       // Side bar
       dashboard: 'داشبورد',
       todos: 'کار ها',
@@ -46,6 +47,7 @@ export default defineI18nConfig(() => ({
       name: 'نام',
       name_placeholder: 'تایماز اکبری',
       theme: 'انتخاب تم',
+      required_input:'این فیلد ضروری میباشد',
 
       locale: 'انتخاب زبان',
       save: 'ذخیره',
