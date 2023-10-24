@@ -1,20 +1,28 @@
 export default defineI18nConfig(() => ({
   legacy: false,
-  locale: 'en',
+  locale: 'fa',
   messages: {
     en: {
-      welcome: 'Welcome',
+
+      // Side bar
       dashboard: 'Dashboard',
       todos: 'Todos',
       weather: 'Weather',
       profile: 'Profile',
+
+      // inputs
+      name: 'Name',
     },
     fa: {
-      welcome: 'خوش آمدید',
+
+      // Side bar
       dashboard: 'داشبورد',
       todos: 'کار ها',
       weather: 'وضعیت آب و هوا',
       profile: 'پروفایل',
+
+      // inputs
+      name: 'نام',
     },
   },
 }))

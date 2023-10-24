@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   modules: [
     '@vueuse/nuxt',
     '@unocss/nuxt',
+    '@anu-vue/nuxt',
     '@pinia/nuxt',
     '@nuxtjs/color-mode',
     '@vite-pwa/nuxt',
@@ -15,7 +16,7 @@ export default defineNuxtConfig({
     // as our supported locales. You can add as
     // many locales as you want here.
     locales: ["en", "fa"],
-
+    strategy: "prefix",
     // Used when active locale is not explicitly defined
     defaultLocale: "fa",
 
