@@ -2,9 +2,9 @@
 import { appName } from '~/constants'
 
 const userStore = useUserStore()
-onMounted(async () => {
-  await userStore.init()
-})
+
+userStore.init()
+
 useHead({
   title: appName,
   htmlAttrs: {

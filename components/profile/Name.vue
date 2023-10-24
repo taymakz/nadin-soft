@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-const name = ref('taymaz')
+const modelValue = defineModel()
+
 </script>
 
 <template>
@@ -7,7 +8,7 @@ const name = ref('taymaz')
     <AInput
       :label="$t('name')"
       type="text"
-     v-model="name"
+     v-model="modelValue"
     />
 
 </template>

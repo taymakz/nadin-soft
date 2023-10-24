@@ -7,16 +7,17 @@ export const useUserStore = defineStore('user', () => {
   const setName = (name: string) => {
     user.value = name
 
-  
-    localStorage.setItem('username',name)
+    localStorage.setItem('username', name)
   }
   const init = async () => {
-    const username = await localStorage.getItem('username')
+    if (process.server)
+      return
+    const username = localStorage.getItem('username')
     if (username !== null)
       user.value = username.toString()
     else
-      await navigateTo('/')
+       navigateTo('/')
   }
 
-  return { user, setName, init,isLogin }
+  return { user, setName, init, isLogin }
 })

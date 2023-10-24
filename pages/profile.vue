@@ -1,7 +1,12 @@
 <script lang="ts" setup>
 const colorMode = useColorMode()
-const { t, locale,setLocale } = useI18n()
+const { t, locale, setLocale } = useI18n()
+const userStore = useUserStore()
 
+const username = ref()
+onMounted(() => {
+  username.value = userStore.user
+})
 const theme = ref(colorMode.value === 'dark' ? t('dark') : t('light'))
 const currentLocale = ref(locale.value === 'en' ? t('english') : t('persian'))
 
@@ -21,14 +26,15 @@ function getLocaleEngValue() {
 }
 function submit() {
   colorMode.preference = getThemeEngValue()
-  setLocale(getLocaleEngValue()) 
-
+  setLocale(getLocaleEngValue())
+  if (username.value)
+    userStore.setName(username.value)
 }
 </script>
 
 <template>
   <div class="max-w-520px flex flex-col justify-center gap-y-6 container">
-    <ProfileName />
+    <ProfileName v-model="username" />
     <ProfileTheme v-model="theme" />
     <ProfileLocale v-model="currentLocale" />
     <ABtn color="success" @click="submit">
