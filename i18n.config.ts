@@ -3,8 +3,11 @@ export default defineI18nConfig(() => ({
   locale: 'fa',
   messages: {
     en: {
+         // locale
+         english : 'English',
+         persian : 'Persian',
+
       // theme
-      theme: 'Select Theme',
       dark: 'Dark',
       light: 'Light',
 
@@ -17,13 +20,18 @@ export default defineI18nConfig(() => ({
       // inputs
       name: 'Name',
       name_placeholder: 'Taymaz Akbari',
+      theme: 'Select Theme',
+
+      locale: 'Select Locale',
 
       save: 'Save',
 
     },
     fa: {
-      // theme
-      theme: 'انتخاب تم',
+
+      // locale
+      english : 'انگلیسی',
+      persian : 'فارسی',
 
       dark: 'تاریک',
       light: 'روشن',
@@ -37,7 +45,9 @@ export default defineI18nConfig(() => ({
       // inputs
       name: 'نام',
       name_placeholder: 'تایماز اکبری',
+      theme: 'انتخاب تم',
 
+      locale: 'انتخاب زبان',
       save: 'ذخیره',
 
     },
