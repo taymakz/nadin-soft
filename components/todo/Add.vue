@@ -1,21 +1,21 @@
 <script lang="ts" setup>
-import { useField } from 'vee-validate'
-
 const userStore = useUserStore()
 const { t } = useI18n()
 
-const isRequired = (val: string | undefined) => (val && val.trim() ? true : t('required_input'))
-
-const { errorMessage: titleError, value: todoTitle } = useField('username', isRequired)
+const errorMessage = ref()
+const todoTitle = ref()
 function submitTodo() {
-  if (!todoTitle.value)
+  if (!todoTitle.value) {
+    errorMessage.value = t('required_input')
     return
+  }
   const item = {
     id: 0,
     title: todoTitle.value,
   }
   userStore.addTodo(item)
   todoTitle.value = ''
+  errorMessage.value = ''
 }
 </script>
 
@@ -23,12 +23,11 @@ function submitTodo() {
   <AInput
     v-model="todoTitle"
     :label="$t('todoTitle')"
-    :error="titleError"
+    :error="errorMessage"
     append-inner-icon="i-carbon-add-alt"
     type="text"
     @keypress.enter="submitTodo"
   />
-
 </template>
 
 <style>

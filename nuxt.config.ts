@@ -19,6 +19,7 @@ export default defineNuxtConfig({
       },
     },
   },
+  ssr:false,
   i18n: {
     // Adding English-Canada and Arabic-Egypt
     // as our supported locales. You can add as

@@ -43,6 +43,12 @@ export const useUserStore = defineStore('user', () => {
 
     syncTodosStorage()
   }
+  const editTodo = (todoId:number,newTitle:string) => {
+    const index = todos.value.findIndex(item => item.id === todoId)
+    if (index !== -1)
+      todos.value[index].title = newTitle
+    syncTodosStorage()
+  }
 
-  return { user, setName, init, isLogin, todos, addTodo, removeTodo }
+  return { user, setName, init, isLogin, todos, addTodo, removeTodo, editTodo }
 })
