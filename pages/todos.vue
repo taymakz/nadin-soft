@@ -1,14 +1,10 @@
-<template>
-  <div>
-    
-  </div>
-</template>
-
 <script lang="ts" setup>
 
 </script>
 
-<style>
-
-</style>
-
+<template>
+  <div class="flex flex-col justify-center space-y-6 container max-w-lg">
+    <TodoAdd/>
+    <TodoList/>
+  </div>
+</template>
