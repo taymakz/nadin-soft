@@ -22,6 +22,8 @@ export default defineI18nConfig(() => ({
       profile: 'Profile',
 
       // inputs
+      city: 'City Name ',
+
       todoTitle: 'Title',
       name: 'Name',
       name_placeholder: 'Taymaz Akbari',
@@ -54,6 +56,7 @@ export default defineI18nConfig(() => ({
       profile: 'پروفایل',
 
       // inputs
+      city: 'اسم شهر',
       todoTitle: 'عنوان',
       name: 'نام',
       name_placeholder: 'تایماز اکبری',

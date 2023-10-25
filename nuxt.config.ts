@@ -11,7 +11,14 @@ export default defineNuxtConfig({
     '@vite-pwa/nuxt',
     '@nuxtjs/i18n',
     '@vee-validate/nuxt',
+    'nuxt-primevue',
   ],
+  primevue: {
+    components: {
+      prefix: 'Prime',
+      include: '*', /* Used as <PrimeButton /> and <PrimeDataTable /> */
+    },
+  },
   vite: {
     vue: {
       script: {
@@ -19,20 +26,20 @@ export default defineNuxtConfig({
       },
     },
   },
-  ssr:false,
+  ssr: false,
   i18n: {
     // Adding English-Canada and Arabic-Egypt
     // as our supported locales. You can add as
     // many locales as you want here.
-    locales: ["en", "fa"],
-  
-    strategy: "prefix_except_default",
+    locales: ['en', 'fa'],
+
+    strategy: 'prefix_except_default',
     // Used when active locale is not explicitly defined
-    defaultLocale: "fa",
+    defaultLocale: 'fa',
 
     // Disabling automatic locale detection (see below)
     detectBrowserLanguage: false,
-    vueI18n: "./i18n.config.ts",
+    vueI18n: './i18n.config.ts',
   },
   experimental: {
     payloadExtraction: false,
@@ -45,8 +52,9 @@ export default defineNuxtConfig({
     '@unocss/reset/tailwind.css',
     '~/assets/css/fonts.css',
     '~/assets/css/main.css',
+    'primevue/resources/themes/lara-dark-teal/theme.css',
   ],
-
+ 
   colorMode: {
     preference: 'light',
     classSuffix: '',
