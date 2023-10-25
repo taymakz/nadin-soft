@@ -3,6 +3,13 @@ export default defineI18nConfig(() => ({
   locale: 'fa',
   messages: {
     en: {
+      sunny: 'Sunny',
+      partlyCloudy: 'Partly Cloudy',
+      cloudy: 'Cloudy',
+      unknown: 'Unknown',
+      notAvailable: 'N/A',
+
+
       // dashboard
       goodMorning: 'Good Morning',
       goodNoon: 'Good Noon',
@@ -36,6 +43,12 @@ export default defineI18nConfig(() => ({
 
     },
     fa: {
+
+      sunny: 'آفتابی',
+      partlyCloudy: 'نیمه ابری',
+      cloudy: 'ابری',
+      unknown: 'نامشخص',
+      notAvailable: 'نداریم',
 
       // dashboard
       goodMorning: 'صبحت بخیر',

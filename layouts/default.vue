@@ -1,10 +1,19 @@
+<script setup lang="ts">
+const menu = ref(false)
+
+const route = useRoute();
+watch(()=>route.path,()=>{
+  menu.value = false
+})
+</script>
+
 <template>
   <div>
-   <AppNavbar/>
+    <AppNavbar v-model="menu"/>
 
- <AppAside/>
+    <AppAside v-model="menu"/>
 
-    <div class="pt-32 min-h-screen p-4 sm:ml-64 bg-white dark:bg-zinc-800">
+    <div class="min-h-screen bg-white p-4 pt-32 sm:ml-64 dark:bg-zinc-800">
       <slot />
     </div>
   </div>
