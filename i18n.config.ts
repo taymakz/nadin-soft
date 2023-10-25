@@ -22,6 +22,7 @@ export default defineI18nConfig(() => ({
       profile: 'Profile',
 
       // inputs
+      todoTitle: 'Title',
       name: 'Name',
       name_placeholder: 'Taymaz Akbari',
       theme: 'Select Theme',
@@ -53,6 +54,7 @@ export default defineI18nConfig(() => ({
       profile: 'پروفایل',
 
       // inputs
+      todoTitle: 'عنوان',
       name: 'نام',
       name_placeholder: 'تایماز اکبری',
       theme: 'انتخاب تم',
