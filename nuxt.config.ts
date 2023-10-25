@@ -14,9 +14,14 @@ export default defineNuxtConfig({
     'nuxt-primevue',
   ],
   primevue: {
+    options: {
+   
+      ripple: true,
+   
+  },
     components: {
       prefix: 'Prime',
-      include: '*', /* Used as <PrimeButton /> and <PrimeDataTable /> */
+      include: ['AutoComplete'], /* Used as <PrimeButton /> and <PrimeDataTable /> */
     },
   },
   vite: {
@@ -54,7 +59,7 @@ export default defineNuxtConfig({
     '~/assets/css/main.css',
     'primevue/resources/themes/lara-dark-teal/theme.css',
   ],
- 
+
   colorMode: {
     preference: 'light',
     classSuffix: '',
