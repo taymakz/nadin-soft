@@ -15,8 +15,6 @@ export const useUserStore = defineStore('user', () => {
     const username = localStorage.getItem('username')
     if (username !== null)
       user.value = username.toString()
-    else
-       navigateTo('/')
   }
 
   return { user, setName, init, isLogin }

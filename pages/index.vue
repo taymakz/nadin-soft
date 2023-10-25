@@ -8,7 +8,7 @@ definePageMeta({
   layout: false,
 })
 
-const isRequired = (val: string) => (val.trim() ? true : t('required_input'))
+const isRequired = (val: string | undefined) => (val && val.trim() ? true : t('required_input'))
 
 const { errorMessage: usernameError, value: name } = useField('username', isRequired)
 
