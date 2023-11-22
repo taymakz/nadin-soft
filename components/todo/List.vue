@@ -38,12 +38,7 @@ function submitEditTodo() {
             variant="text"
             @click="editTodo(item.id)"
           />
-          <ABtn
-            icon="i-carbon-trash-can"
-            icon-only
-            variant="text"
-            @click="userStore.removeTodo(item.id)"
-          />
+          <TodoRemoveButton :item-id="item.id"/>
         </div>
       </li>
     </ul>
