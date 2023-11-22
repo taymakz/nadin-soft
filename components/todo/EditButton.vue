@@ -13,7 +13,7 @@ const props = defineProps({
   }
 })
 const emits = defineEmits<{
-  openEditModal: [data: Todo]
+  editModal: [data: Todo]
 }>()
 
 function editTodo() {
@@ -23,7 +23,7 @@ function editTodo() {
       id: getTodo.id,
       title: getTodo.title,
     }
-    emits('openEditModal', emitData)
+    emits('editModal', emitData)
   }
 }
 </script>

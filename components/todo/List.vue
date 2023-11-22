@@ -16,17 +16,7 @@ const openEditModal = (todoData: Todo) => {
 <template>
   <div>
     <ul class="space-y-4">
-      <li v-for="item in userStore.todos" :key="item.id"
-        class="flex flex-col items-center justify-between gap-x-6 border border-gray-200 rounded-xl px-4 py-3 md:flex-row dark:border-white/10">
-        <div class="flex-grow">
-          {{ item.title }}
-        </div>
-        <div class="flex items-center gap-x-2">
-          <TodoEditButton @open-edit-modal="openEditModal" :item-id="item.id" />
-
-          <TodoRemoveButton :item-id="item.id" />
-        </div>
-      </li>
+      <TodoCard v-for="item in userStore.todos" :key="item.id" :todo="item" @open-edit-modal="openEditModal" />
     </ul>
     <TodoEditModal v-if="editModal" :todo="currentEditingTodo" v-model="editModal" />
 
