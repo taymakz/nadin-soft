@@ -22,7 +22,8 @@ const filteredCityNames = computed(() => filteredCities.value.map(city => city.c
 async function getWeatherData() {
   if (selectedCity.value) {
     // Make an API request to get weather data
-    weatherData.value = await $fetch(`https://api.open-meteo.com/v1/forecast?latitude=${selectedCity.value.lat}&longitude=${selectedCity.value.lng}&current_weather=true`)
+
+    weatherData.value = await useGetWeather(useGetWeatherLink(selectedCity.value.lat, selectedCity.value.lng))
   }
 }
 
