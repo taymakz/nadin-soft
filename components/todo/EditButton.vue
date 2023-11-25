@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { useStore } from 'vuex'
 import type { Todo } from '~/types/todo'
 
 const props = defineProps({
@@ -10,9 +11,12 @@ const props = defineProps({
 const emits = defineEmits<{
   editModal: [data: Todo]
 }>()
-const userStore = useUserStore()
+const store = useStore()
+
+// const userStore = useUserStore()
 function editTodo() {
-  const getTodo = userStore.todos.find(x => x.id === props.itemId)
+  const todos = store.getters.getTodos
+  const getTodo: Todo = todos.find((x: Todo) => x.id === props.itemId)
   if (getTodo) {
     const emitData: Todo = {
       id: getTodo.id,

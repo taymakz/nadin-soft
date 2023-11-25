@@ -39,6 +39,7 @@ export default defineI18nConfig(() => ({
       locale: 'Select Locale',
 
       save: 'Save',
+      logout: 'Logout',
 
     },
     fa: {
@@ -77,6 +78,7 @@ export default defineI18nConfig(() => ({
 
       locale: 'انتخاب زبان',
       save: 'ذخیره',
+      logout: 'خروج',
 
     },
   },
