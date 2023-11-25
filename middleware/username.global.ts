@@ -1,7 +1,7 @@
+import * as process from 'node:process'
 
-
-export default defineNuxtRouteMiddleware((to, from) => {
-  if (process.server || to.path ==='/')
+export default defineNuxtRouteMiddleware((to) => {
+  if (process.server || to.path === '/')
     return
 
   const username = localStorage.getItem('username')

@@ -9,7 +9,6 @@ export default defineI18nConfig(() => ({
       unknown: 'Unknown',
       notAvailable: 'N/A',
 
-
       // dashboard
       goodMorning: 'Good Morning',
       goodNoon: 'Good Noon',

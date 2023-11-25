@@ -15,10 +15,10 @@ export default defineNuxtConfig({
   ],
   primevue: {
     options: {
-   
+
       ripple: true,
-   
-  },
+
+    },
     components: {
       prefix: 'Prime',
       include: ['AutoComplete'], /* Used as <PrimeButton /> and <PrimeDataTable /> */

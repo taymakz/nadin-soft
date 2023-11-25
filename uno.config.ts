@@ -1,4 +1,4 @@
-import { presetAnu, presetIconExtraProperties } from 'anu-vue'
+import { presetAnu } from 'anu-vue'
 import { presetThemeDefault } from '@anu-vue/preset-theme-default'
 import {
   defineConfig,

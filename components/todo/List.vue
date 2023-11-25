@@ -2,12 +2,11 @@
 import type { Todo } from '~/types/todo'
 
 const userStore = useUserStore()
-const { t } = useI18n()
 
 const editModal = ref(false)
 const currentEditingTodo: Ref<Todo | null> = ref(null)
 
-const openEditModal = (todoData: Todo) => {
+function openEditModal(todoData: Todo) {
   currentEditingTodo.value = todoData
   editModal.value = true
 }
@@ -18,8 +17,7 @@ const openEditModal = (todoData: Todo) => {
     <ul class="space-y-4">
       <TodoCard v-for="item in userStore.todos" :key="item.id" :todo="item" @open-edit-modal="openEditModal" />
     </ul>
-    <TodoEditModal v-if="editModal" :todo="currentEditingTodo" v-model="editModal" />
-
+    <TodoEditModal v-if="editModal" v-model="editModal" :todo="currentEditingTodo" />
   </div>
 </template>
 

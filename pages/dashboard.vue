@@ -23,7 +23,7 @@ const getMessage = computed(() => {
     return t('goodMorning')
   else if (hours > 11 && hours <= 16)
     return t('goodNoon')
-  else 
+  else
     return t('goodNight')
 })
 </script>
@@ -34,7 +34,7 @@ const getMessage = computed(() => {
       {{ currentTime }}
     </h1>
     <div class="text-xl text-zinc-700 dark:text-zinc-400">
-      {{getMessage}} , {{ userStore.user }}
+      {{ getMessage }} , {{ userStore.user }}
     </div>
   </div>
 </template>

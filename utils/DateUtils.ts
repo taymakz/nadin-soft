@@ -1,8 +1,6 @@
 import { padTo2Digits } from './NumberUtils'
 
-export function toPersianDate(date: Date,
-  withTime = false,
-  withDashBetweenTimeAndDate = false): string {
+export function toPersianDate(date: Date, withTime = false, withDashBetweenTimeAndDate = false): string {
   const pDate = new Date(date).toLocaleDateString('fa-IR', {
     day: '2-digit',
     month: '2-digit',

@@ -1,13 +1,12 @@
 <script lang="ts" setup>
-import type { Todo } from '~/types/todo';
-
-
-const { t } = useI18n()
-
+import type { Todo } from '~/types/todo'
 
 const emits = defineEmits<{
   addTodo: [data: Todo]
 }>()
+
+const { t } = useI18n()
+
 const errorMessage = ref()
 const todoTitle = ref()
 function submitTodo() {
@@ -15,11 +14,11 @@ function submitTodo() {
     errorMessage.value = t('required_input')
     return
   }
-  const item:Todo = {
+  const item: Todo = {
     id: 0,
     title: todoTitle.value,
   }
-  emits('addTodo',item)
+  emits('addTodo', item)
 
   todoTitle.value = ''
   errorMessage.value = ''

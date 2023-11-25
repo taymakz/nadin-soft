@@ -3,8 +3,8 @@
 </script>
 
 <template>
-  <div class="flex flex-col justify-center space-y-6 container max-w-lg">
-    <TodoAdd/>
-    <TodoList/>
+  <div class="max-w-lg flex flex-col justify-center container space-y-6">
+    <TodoAdd />
+    <TodoList />
   </div>
 </template>

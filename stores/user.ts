@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+
 import type { Ref } from 'vue'
 import type { Todo } from '~/types/todo'
 
@@ -12,8 +13,6 @@ export const useUserStore = defineStore('user', () => {
     localStorage.setItem('username', JSON.stringify(name))
   }
   const init = async () => {
-    if (process.server)
-      return
     const username = localStorage.getItem('username')
     const todo_list = localStorage.getItem('todos')
     if (username)
@@ -43,7 +42,7 @@ export const useUserStore = defineStore('user', () => {
 
     syncTodosStorage()
   }
-  const editTodo = (todoId:number,newTitle:string) => {
+  const editTodo = (todoId: number, newTitle: string) => {
     const index = todos.value.findIndex(item => item.id === todoId)
     if (index !== -1)
       todos.value[index].title = newTitle

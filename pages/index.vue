@@ -22,7 +22,7 @@ function toggleLocale() {
   setLocale(locale.value === 'en' ? 'fa' : 'en')
 }
 
-onMounted(async() => {
+onMounted(async () => {
   const userStore = await useUserStore()
   await userStore.init()
   if (userStore.isLogin)
