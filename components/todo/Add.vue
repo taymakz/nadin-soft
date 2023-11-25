@@ -2,7 +2,7 @@
 import type { Todo } from '~/types/todo'
 
 const userStore = useUserStore()
-const todoTitle = ref()
+const todoTitle = ref<string>('')
 provide('model', todoTitle)
 
 function addTodo() {

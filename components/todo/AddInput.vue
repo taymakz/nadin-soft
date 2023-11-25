@@ -6,7 +6,8 @@ const emits = defineEmits(['addTodo'])
 const { t } = useI18n()
 
 const errorMessage = ref()
-const todoTitle = ref(inject('model'))
+type TodoTitleType = Ref<string>
+const todoTitle = ref(inject<TodoTitleType>('model'))
 function submitForm() {
   if (!todoTitle.value) {
     errorMessage.value = t('required_input')
