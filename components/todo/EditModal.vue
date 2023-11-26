@@ -1,11 +1,13 @@
 <script lang="ts" setup>
-import type { Todo } from '~/types/todo'
+import { useStore } from 'vuex'
+import type { EditTodoPayload, Todo } from '~/types/todo'
 
 const props = defineProps<{
   todo: Todo | null
 }>()
 
-const userStore = useUserStore()
+// const userStore = useUserStore()
+const store = useStore()
 
 const modelValue = defineModel()
 const newTodoId = ref()
@@ -17,7 +19,12 @@ onMounted(() => {
 })
 
 function submitEditTodo() {
-  userStore.editTodo(newTodoId.value, newTodoTitle.value)
+  const data: EditTodoPayload = {
+    todoId: newTodoId.value,
+    newTitle: newTodoTitle.value,
+  }
+  store.dispatch('editTodoAction', data)
+  // userStore.editTodo(newTodoId.value, newTodoTitle.value)
   modelValue.value = false
   // Reset formData for the next edit
   newTodoId.value = null

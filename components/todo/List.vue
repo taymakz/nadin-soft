@@ -1,7 +1,9 @@
 <script lang="ts" setup>
+import { useStore } from 'vuex';
 import type { Todo } from '~/types/todo'
 
-const userStore = useUserStore()
+// const userStore = useUserStore()
+const store = useStore()
 
 const editModal = ref(false)
 const currentEditingTodo: Ref<Todo | null> = ref(null)
@@ -15,7 +17,7 @@ function openEditModal(todoData: Todo) {
 <template>
   <div>
     <ul class="space-y-4">
-      <TodoCard v-for="item in userStore.todos" :key="item.id" :todo="item" @open-edit-modal="openEditModal" />
+      <TodoCard v-for="item in store.getters.getTodos" :key="item.id" :todo="item" @open-edit-modal="openEditModal" />
     </ul>
     <TodoEditModal v-if="editModal" v-model="editModal" :todo="currentEditingTodo" />
   </div>
