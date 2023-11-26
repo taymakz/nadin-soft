@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useField } from 'vee-validate'
+import { useUserStore } from '~/stores/userPinia'
 
 const { t, locale, setLocale } = useI18n()
 const userStore = useUserStore()

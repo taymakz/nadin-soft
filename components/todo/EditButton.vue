@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { useStore } from 'vuex'
 import type { Todo } from '~/types/todo'
 
 const props = defineProps({
@@ -10,9 +11,11 @@ const props = defineProps({
 const emits = defineEmits<{
   editModal: [data: Todo]
 }>()
-const userStore = useUserStore()
-function editTodo() {
-  const getTodo = userStore.todos.find(x => x.id === props.itemId)
+// const userStore = useUserStore()
+const store = useStore()
+async function editTodo() {
+  // const getTodo = userStore.todos.find(x => x.id === props.itemId)
+  const getTodo: Todo = await store.dispatch('getTodoById', props.itemId)
   if (getTodo) {
     const emitData: Todo = {
       id: getTodo.id,

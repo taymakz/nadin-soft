@@ -1,5 +1,8 @@
 <script lang="ts" setup>
-const userStore = useUserStore()
+import { useStore } from 'vuex';
+
+// const userStore = useUserStore()
+const store = useStore()
 const currentTime = ref(getCurrentTime())
 const { t } = useI18n()
 function getCurrentTime() {
@@ -34,7 +37,7 @@ const getMessage = computed(() => {
       {{ currentTime }}
     </h1>
     <div class="text-xl text-zinc-700 dark:text-zinc-400">
-      {{ getMessage }} , {{ userStore.user }}
+      {{ getMessage }} , {{ store.getters.getUser }}
     </div>
   </div>
 </template>
