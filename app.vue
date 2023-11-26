@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import { useStore } from 'vuex'
 import { appName } from '~/constants'
 
-// const userStore = useUserStore()
-const store = useStore()
-// userStore.init()
-store.commit('init')
+const userStore = useUserStore()
+
+userStore.init()
 
 useHead({
   title: appName,

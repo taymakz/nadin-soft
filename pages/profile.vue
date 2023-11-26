@@ -1,15 +1,11 @@
 <script lang="ts" setup>
-import { useStore } from 'vuex'
-import { useUserStore } from '~/stores/user'
-
 const colorMode = useColorMode()
 const { t, locale, setLocale } = useI18n()
-// const userStore = useUserStore()
-const store = useStore()
+const userStore = useUserStore()
+
 const username = ref()
 onMounted(() => {
-  // username.value = userStore.user
-  username.value = store.getters.user
+  username.value = userStore.user
 })
 const theme = ref(colorMode.value === 'dark' ? t('dark') : t('light'))
 const currentLocale = ref(locale.value === 'en' ? t('english') : t('persian'))
@@ -32,8 +28,7 @@ function submit() {
   colorMode.preference = getThemeEngValue()
   setLocale(getLocaleEngValue())
   if (username.value)
-    store.commit('setName', username.value)
-    // userStore.setName(username.value)
+    userStore.setName(username.value)
 }
 </script>
 

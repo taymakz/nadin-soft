@@ -1,11 +1,9 @@
 <script setup lang="ts">
 import { useField } from 'vee-validate'
-import { useStore } from 'vuex'
-import { useUserStore } from '~/stores/user'
 
 const { t, locale, setLocale } = useI18n()
-// const userStore = useUserStore()
-const store = useStore()
+const userStore = useUserStore()
+
 definePageMeta({
   layout: false,
 })
@@ -14,25 +12,21 @@ const isRequired = (val: string | undefined) => (val && val.trim() ? true : t('r
 
 const { errorMessage: usernameError, value: name } = useField('username', isRequired)
 
-function submit() {
+async function submit() {
   if (!name.value)
     return
-  store.commit('loginUser', name.value)
-  // userStore.setName(name.value)
+  await userStore.setName(name.value)
+  await navigateTo('/dashboard')
 }
 function toggleLocale() {
   setLocale(locale.value === 'en' ? 'fa' : 'en')
 }
 
-onMounted(() => {
-  const store = useStore()
-  store.commit('init')
-  if (store.getters.isLogin)
+onMounted(async () => {
+  const userStore = await useUserStore()
+  await userStore.init()
+  if (userStore.isLogin)
     navigateTo('/dashboard')
-  // const userStore = await useUserStore()
-  // await userStore.init()
-  // if (userStore.isLogin)
-  //   navigateTo('/dashboard')
 })
 </script>
 
