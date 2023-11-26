@@ -1,39 +1,35 @@
 <script lang="ts" setup>
 import type { Todo } from '~/types/todo'
 
-const emits = defineEmits<{
-  addTodo: [data: Todo]
-}>()
+const emits = defineEmits(['addTodo'])
 
 const { t } = useI18n()
 
 const errorMessage = ref()
-const todoTitle = ref()
-function submitTodo() {
+type TodoTitleType = Ref<string>
+const todoTitle = ref(inject<TodoTitleType>('model'))
+function submitForm() {
   if (!todoTitle.value) {
     errorMessage.value = t('required_input')
     return
   }
-  const item: Todo = {
-    id: 0,
-    title: todoTitle.value,
-  }
-  emits('addTodo', item)
-
+  emits('addTodo')
   todoTitle.value = ''
   errorMessage.value = ''
 }
 </script>
 
 <template>
-  <AInput
-    v-model="todoTitle"
-    :label="$t('todoTitle')"
-    :error="errorMessage"
-    append-inner-icon="i-carbon-add-alt"
-    type="text"
-    @keypress.enter="submitTodo"
-  />
+  <div>
+    <AInput
+      v-model="todoTitle"
+      :label="$t('todoTitle')"
+      :error="errorMessage"
+      append-inner-icon="i-carbon-add-alt"
+      type="text"
+      @keypress.enter="submitForm"
+    />
+  </div>
 </template>
 
 <style>

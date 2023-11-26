@@ -2,8 +2,14 @@
 import type { Todo } from '~/types/todo'
 
 const userStore = useUserStore()
+const todoTitle = ref<string>('')
+provide('model', todoTitle)
 
-function addTodo(item: Todo) {
+function addTodo() {
+  const item: Todo = {
+    id: 0,
+    title: todoTitle.value,
+  }
   userStore.addTodo(item)
 }
 </script>
